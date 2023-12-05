@@ -1,25 +1,26 @@
 package com.example.nextpublicholiday;
 
+import com.example.model.HolidayService;
+import com.example.view.MainView;
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
-
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Holiday Tracker");
+        HolidayService holidayService = new HolidayService();
+        MainView mainView = new MainView();
+        MainController mainController = new MainController(holidayService, mainView);
 
-        StackPane root = new StackPane();
-        root.getChildren().add(new Label("Hello, JavaFX!"));
+        mainController.initialize();
 
-        primaryStage.setScene(new Scene(root, 300, 200));
+
+        primaryStage.setTitle("Application");
+        primaryStage.setScene(mainView.createScene());
         primaryStage.show();
     }
 }

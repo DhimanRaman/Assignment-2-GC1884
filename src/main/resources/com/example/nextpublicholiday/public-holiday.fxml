@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="225.0" prefWidth="575.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.nextpublicholiday.MainController">
+
+   <Label layoutX="31.0" layoutY="21.0" prefHeight="27.0" prefWidth="271.0" text="Upcoming Public Holidays" styleClass="label">
+      <font>
+         <Font name="Elephant" size="20.0" />
+      </font>
+   </Label>
+   <Label layoutX="31.0" layoutY="76.0" prefHeight="20.0" prefWidth="207.0" text="Enter Date (yyyy-mm-dd): " styleClass="label-bold-italic">
+      <font>
+         <Font name="Times New Roman Bold Italic" size="18.0" />
+      </font>
+   </Label>
+   <TextField fx:id="dateTextField" layoutX="238.0" layoutY="70.0" prefHeight="25.0" prefWidth="337.0" styleClass="text-field">
+      <font>
+         <Font name="Times New Roman" size="18.0" />
+      </font>
+   </TextField>
+   <Button fx:id="fetchButton" layoutX="31.0" layoutY="126.0" mnemonicParsing="false"
+           onAction="#fetchHolidaysByUserInput" prefHeight="25.0" prefWidth="207.0" text="Fetch Data" styleClass="button">
+      <font>
+         <Font name="Times New Roman Bold Italic" size="18.0" />
+      </font>
+   </Button>
+</AnchorPane>
